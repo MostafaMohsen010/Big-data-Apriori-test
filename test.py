@@ -1,12 +1,17 @@
 from efficient_apriori import apriori
+import pandas as pd
 
+def test_apriori(min_sup=0.1, min_conf=1):
 
-def test_apriori():
+    df = pd.read_csv("dataset.csv", header=None)
+    
+    transactions = [tuple(row) for row in df.values.tolist()]
 
-    transactions = [('eggs', 'bacon', 'soup'),
-                    ('eggs', 'bacon', 'apple'),
-                    ('soup', 'bacon', 'banana')]
+    itemsets, rules = apriori(transactions, min_support=min_sup, min_confidence=min_conf)
 
-    itemsets, rules = apriori(transactions, min_support=0.1, min_confidence=1)
+    print(rules)
 
     #TODO: ADD our algorithim and compare results
+
+if __name__ == "__main__":
+    test_apriori()
