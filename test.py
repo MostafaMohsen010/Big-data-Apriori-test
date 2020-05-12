@@ -9,8 +9,8 @@ def test_apriori(min_sup=0.1, min_conf=1):
 
     itemsets, rules = apriori(transactions, min_support=min_sup, min_confidence=min_conf)
 
-    print(rules)
-
+    #print(rules)
+    print(itemsets[1])
     #TODO: ADD our algorithim and compare results
 
 if __name__ == "__main__":
