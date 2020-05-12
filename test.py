@@ -3,7 +3,7 @@ import pandas as pd
 
 def test_apriori(min_sup=0.1, min_conf=1):
 
-    df = pd.read_csv("dataset.csv", header=None)
+    df = pd.read_csv("dataset.csv")
     
     transactions = [tuple(row) for row in df.values.tolist()]
 
